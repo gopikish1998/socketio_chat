@@ -4,7 +4,7 @@ import io from "socket.io-client";
 
 
 let socket;
-const CONNECTION_PORT = "http://localhost:4002/";
+const CONNECTION_PORT = "https://socketchatgopi.herokuapp.com/";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
