@@ -8,7 +8,7 @@ function Register() {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [pic, setPic] = useState()
+    const [pic, setPic] = useState('')
     const [isLoading, setLoading]= useState(false)
     let history = useHistory()
     useEffect(() => {
@@ -18,6 +18,7 @@ function Register() {
         e.preventDefault();
         setLoading(true)
         try {
+            console.log({name,email,password,pic})
             const { data }= await axios.post(`${env.api}/api/user`, { name, email, password, pic }, {
             headers: {
                 "Content-type":"application/json"
@@ -32,19 +33,21 @@ function Register() {
         }
     }
     // const handleClick = async function () { };
-    const postDetails = async function (pic) {
+    const postDetails = async function (pict) {
         setLoading(true);
-        if (pic === undefined) {
+        if (pict === undefined) {
             return;
         }
-        if(pic.type==='image/jpeg'||pic.type==='image/png') {
+        if(pict.type==='image/jpeg'||pict.type==='image/png') {
             const data = new FormData();
-            data.append('file', pic);
+            data.append('file', pict);
             data.append('upload_preset', 'chatapp');
             data.append('cloud_name', "dhfcilzy2");
             let res = await axios.post('https://api.cloudinary.com/v1_1/dhfcilzy2/image/upload',data)
             setPic(res.data.url)
             setLoading(false)
+            console.log(res.data.url)
+            console.log(pic)
         }
         else {
             alert('Please select only .jpeg or .png files')
@@ -74,7 +77,7 @@ function Register() {
                                 <input type="password" className="form-control" id='password' placeholder="Your Password" onChange={e=>setPassword(e.target.value)} value={password} required/>
                         </div>
                         <div class="form-group mb-3">
-                        <label class="form-label" for="inputGroupFile02">Upload Profile pic (optional)</label>
+                        <label class="form-label" for="inputGroupFile02">Upload Profile pic (optional)</label>{isLoading?<span>Uploading... please wait</span>:<span></span>}
                         <input type="file" class="form-control" id="inputGroupFile02" accept="image/*" onChange={(e) => postDetails(e.target.files[0])}/>
                         </div>
                             <div className="form-group">
