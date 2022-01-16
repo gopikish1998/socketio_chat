@@ -120,7 +120,7 @@ function SideDrawer() {
                         <p className='d-none d-sm-block px-3 pt-3'>Search User</p>
                     </Button>
                 </Tooltip>
-                {matches?<></>:<Typography className='px-3 p-3' style={{ fontWeight: "bold",fontSize: "35px", color:"white" }}>YoChat</Typography>}
+                {matches?<></>:<Typography className='px-3 p-3' style={{ fontWeight: "bold",fontSize: "35px", color:"white" }}>Yo!</Typography>}
                 <div className='d-flex justify-content-around align-items-center'>
                     <Tooltip title="Notifications">
                         <Button
