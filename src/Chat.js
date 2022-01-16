@@ -12,10 +12,10 @@ function Chat() {
     const history = useHistory()
     return (
         <div style={{ width: "100%" }}>
-            {<SideDrawer/>}
+            {user&& <SideDrawer/>}
             <Box display={'flex'} alignItems={"center"} justifyContent={"space-around"} height="100%" width="100%">
-                {<MyChats fetchAgain={fetchAgain}/>}
-                {<ChatBox fetchAgain={fetchAgain} setFetchAgain={setFetchAgain}/>}
+                {user&&<MyChats fetchAgain={fetchAgain}/>}
+                {user&&<ChatBox fetchAgain={fetchAgain} setFetchAgain={setFetchAgain}/>}
             </Box>
         </div>
     )

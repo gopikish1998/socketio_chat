@@ -27,7 +27,8 @@ function Register() {
                 setLoading(false)
             localStorage.setItem('userinfo',JSON.stringify(data))
         // alert("Confirmation email sent!")
-        history.push("/chats")
+            history.push("/chats")
+            window.location.reload()
         } catch (error) {
             alert('error occured')
         }

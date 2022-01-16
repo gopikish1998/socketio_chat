@@ -16,6 +16,7 @@ function Login() {
             window.localStorage.setItem("userinfo",JSON.stringify(data))
             // window.location.reload()
             history.push(`/chats`)
+            window.location.reload()
         } catch (error) {
             setMessage(false)
         }
