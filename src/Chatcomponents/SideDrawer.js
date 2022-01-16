@@ -77,6 +77,7 @@ function SideDrawer() {
         } catch (error) {
             setLoadingChat(false)
             console.log(error)
+            alert('something went wrong')
         }
     }
     const handleUsers = async (e) => {
@@ -97,6 +98,7 @@ function SideDrawer() {
             } catch (error) {
             console.log(error)
             setLoading(false)
+            alert('something went wrong')
         }   
     }
     const [search, setSearch] = useState('');

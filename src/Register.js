@@ -58,7 +58,7 @@ function Register() {
         <div className='container login-container '>
             <div className='row'>
                 <div className='col-md-6 login-form-1'>
-                    <h3 className='justify-content-center'>Chat App</h3>
+                    <h3 className='justify-content-center'>Yo!</h3>
                     <p>Welcome! Please Register</p>
                 </div>
                 <div className='col-md-6 login-form-2'>

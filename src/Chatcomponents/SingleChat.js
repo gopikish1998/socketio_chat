@@ -44,6 +44,7 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
             socket.emit('joinchat', selectedChat._id)
         } catch (error) {
             console.log(error)
+            alert("can't fetch msgs, try refreshing once")
         }
     }
     useEffect(() => {
@@ -113,6 +114,7 @@ console.log(notification)
 
             } catch (error) {
                 console.log(error)
+                alert('cant send')
             }
         }
     }
